@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Falahiyya Arabic & English Educational Complex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            font-size: 1.1rem;
+        }
+
+        .breadcrumb li {
+            margin: 0 5px;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: '>';
+            margin-left: 10px;
+        }
+
+        .breadcrumb a {
+            color: var(--light-pink);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--sea-blue);
+            text-decoration: underline;
+        }
+
+        /* Admissions Intro */
+        .admissions-intro {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--sea-blue);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: #666;
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 5px solid white;
+            position: relative;
+        }
+
+        .intro-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-light);
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .intro-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+            background-color: #f0f8ff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--gradient);
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+            border-top: 4px solid var(--pink);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .step-card h3 {
+            color: var(--sea-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Requirements Section */
+        .requirements {
+            padding: 80px 0;
+            background-color: white;
+            position: relative;
+        }
+
+        .requirements::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--gradient-reverse);
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .req-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--sea-blue);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .req-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--pink);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .req-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .req-card:hover::after {
+            opacity: 1;
+        }
+
+        .req-card h3 {
+            color: var(--sea-blue);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .req-list {
+            list-style: none;
+        }
+
+        .req-list li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .req-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .req-list i {
+            color: var(--pink);
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Fees Section */
+        .fees {
+            padding: 80px 0;
+            background-color: #f0f8ff;
+            position: relative;
+        }
+
+        .fees::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--gradient);
+        }
+
+        .fee-tables {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .fee-table {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border-top: 5px solid var(--sea-blue);
+        }
+
+        .fee-table:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .fee-table::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--pink);
+            opacity: 0.8;
+        }
+
+        .table-header {
+            background: var(--gradient);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .table-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .table-body {
+            padding: 20px;
+        }
+
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fee-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--sea-blue);
+            font-size: 1.1rem;
+        }
+
+        /* Scholarship Section */
+        .scholarship {
+            padding: 80px 0;
+            background-color: white;
+            position: relative;
+        }
+
+        .scholarship::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--gradient-reverse);
+        }
+
+        .scholarship-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .scholarship-info {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--pink);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scholarship-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--sea-blue);
+            border-radius: 50%;
+            transform: translate(50px, -50px);
+            opacity: 0.1;
+        }
+
+        .scholarship-info::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--pink);
+            border-radius: 50%;
+            transform: translate(-50px, 50px);
+            opacity: 0.1;
+        }
+
+        .scholarship-info h3 {
+            color: var(--sea-blue);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .criteria-list {
+            list-style: none;
+            margin: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .criteria-list li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .criteria-list i {
+            color: var(--sea-blue);
+            background: rgba(255, 107, 149, 0.1);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-reverse);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover::after {
+            opacity: 1;
+        }
+
+        /* Application Form */
+        .application {
+            padding: 80px 0;
+            background-color: #f0f8ff;
+            position: relative;
+        }
+
+        .application::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--gradient);
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 5px solid var(--sea-blue);
+            border-bottom: 5px solid var(--pink);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--sea-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(45, 156, 219, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to bottom, #111, #222);
+            color: white;
+            padding: 70px 0 0;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--gradient);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--light-pink);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--light-pink);
+            padding-left: 5px;
+            transform: translateX(5px);
+        }
+
+        .contact-info-footer {
+            list-style: none;
+        }
+
+        .contact-info-footer li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-info-footer i {
+            color: var(--light-pink);
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            background-color: #000;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav ul {
+                gap: 15px;
+            }
+            
+            .intro-content, .scholarship-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .intro-img, .scholarship-img {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 140px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 140px);
+                background: var(--gradient-reverse);
+                transition: var(--transition);
+                z-index: 99;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                overflow-y: auto;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 30px;
+                gap: 10px;
+            }
+            
+            nav a {
+                display: block;
+                padding: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            .page-header {
+                padding: 80px 0;
+            }
+            
+            .fee-tables {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+      <header>
+        <div class="header-top">
+            <div class="container header-top-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +233 20 890 5084/+233 54 577 0815 </span>
+                    <span><i class="fas fa-envelope"></i> info.falahiyya@gmail.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container main-header">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="src\images\logo2.png" alt="Falahiyya Logo">
+                </div>
+                <div class="logo-text">
+                    <h1>Falahiyya Arabic & English Educational Complex</h1>
+                    <p>Academic and Moral Excellence</p>
+                </div>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academic.html">Academics</a></li>
+                    <li><a href="admission.html"  class="active">Admissions</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Admissions</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Admissions</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Admissions Intro -->
+    <section class="admissions-intro">
+        <div class="container">
+            <div class="section-title">
+                <h2>Begin Your Educational Journey</h2>
+                <p>Join our vibrant community of learners and achievers</p>
+            </div>
+            
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p>At Falahiyya Arabic and English Educational Complex, we welcome students from diverse backgrounds to experience our unique bilingual education program. Our admissions process is designed to identify students who will thrive in our academic environment while contributing positively to our school community.</p>
+                    <p>We accept applications year-round for Kindergarten through Senior High School. Boarding facilities are available for students from Grade 4 and above.</p>
+                    <p>Our next academic term begins on <strong>September 5, 2025</strong>. The deadline for applications is <strong>July 31, 2026</strong>.</p>
+                    <a href="#application" class="btn">Apply Now</a>
+                </div>
+                <div class="intro-img">
+                    <img src="" alt="Students at Falahiyya">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Process</h2>
+                <p>Simple steps to join our school community</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Submit Application</h3>
+                    <p>Complete the online application form and pay the non-refundable application fee of GH₵ 100</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Schedule Assessment</h3>
+                    <p>Our admissions office will contact you to schedule an entrance assessment and interview</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Submit Documents</h3>
+                    <p>Provide required documents including previous school records and birth certificate</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3>Receive Decision</h3>
+                    <p>Admissions decisions are communicated within 2 weeks of completing all requirements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="requirements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Requirements</h2>
+                <p>What you need to apply to our programs</p>
+            </div>
+            
+            <div class="requirements-grid">
+                <div class="req-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Kindergarten</h3>
+                    <ul class="req-list">
+                        <li><i class="fas fa-check-circle"></i> Child must be 4 years old by September 1</li>
+                        <li><i class="fas fa-check-circle"></i> Completed application form</li>
+                        <li><i class="fas fa-check-circle"></i> Birth certificate</li>
+                        <li><i class="fas fa-check-circle"></i> Immunization records</li>
+                        <li><i class="fas fa-check-circle"></i> Recent passport photograph</li>
+                    </ul>
+                </div>
+                
+                <div class="req-card">
+                    <h3><i class="fas fa-book"></i> Primary School</h3>
+                    <ul class="req-list">
+                        <li><i class="fas fa-check-circle"></i> Completed application form</li>
+                        <li><i class="fas fa-check-circle"></i> Birth certificate</li>
+                        <li><i class="fas fa-check-circle"></i> Previous school reports (2 years)</li>
+                        <li><i class="fas fa-check-circle"></i> Recommendation letter from previous school</li>
+                        <li><i class="fas fa-check-circle"></i> Pass entrance assessment</li>
+                    </ul>
+                </div>
+                
+                <div class="req-card">
+                    <h3><i class="fas fa-user-graduate"></i> Junior High</h3>
+                    <ul class="req-list">
+                        <li><i class="fas fa-check-circle"></i> Completed application form</li>
+                        <li><i class="fas fa-check-circle"></i> Birth certificate</li>
+                        <li><i class="fas fa-check-circle"></i> All previous school reports</li>
+                        <li><i class="fas fa-check-circle"></i> Pass entrance examination and interview</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees Section -->
+    <section class="fees">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fee Structure</h2>
+                <p>Transparent tuition and fees for the 2025-2026 academic year</p>
+            </div>
+            
+            <div class="fee-tables">
+                <div class="fee-table">
+                    <div class="table-header">
+                        <h3>Day Students</h3>
+                        <p>Kindergarten to Senior High</p>
+                    </div>
+                    <div class="table-body">
+                        <div class="fee-item">
+                            <span>Tuition Fee</span>
+                            <span>GH₵1000 - 1,200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Registration Fee</span>
+                            <span>GH₵ 100</span>
+                        </div>
+                
+                        <!-- <div class="fee-item">
+                            <span>Textbooks & Materials</span>
+                            <span>GH₵ 400</span>
+                        </div> -->
+                        <div class="fee-item">
+                            <span>PTA Fees</span>
+                            <span>GH₵ 5</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Total Per Term</span>
+                            <span>GH₵ 1,150 - 1,350</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fee-table">
+                    <div class="table-header">
+                        <h3>Boarding Students</h3>
+                        <p>To jenior High</p>
+                    </div>
+                    <div class="table-body">
+                        <div class="fee-item">
+                            <span>Tuition Fee</span>
+                            <span>GH₵ 1,200 - 1,600</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Boarding Fee</span>
+                            <span>GH₵ 800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Registration Fee</span>
+                            <span>GH₵ 100</span>
+                        </div>
+                        
+                        <!-- <div class="fee-item">
+                            <span>Textbooks & Materials</span>
+                            <span>GH₵ 400</span>
+                        </div> -->
+                        <div class="fee-item">
+                            <span>Total Per Term</span>
+                            <span>GH₵2,100 - 2,900</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; text-align: center;">
+                <p><strong>Note:</strong> Fees vary by grade level. Payment plans and sibling discounts available.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarship Section -->
+    <section class="scholarship">
+        <div class="container">
+            <div class="section-title">
+                <h2>Scholarships & Financial Aid</h2>
+                <p>Investing in exceptional students</p>
+            </div>
+            
+            <div class="scholarship-content">
+                <div class="scholarship-info">
+                    <h3>Merit-Based Scholarships</h3>
+                    <p>Falahiyya offers several scholarship opportunities for outstanding students who demonstrate academic excellence, leadership potential, and strong moral character.</p>
+                    
+                    <h3 style="margin-top: 25px;">Need-Based Financial Aid</h3>
+                    <p>We believe financial circumstances should not prevent qualified students from accessing quality education. Limited need-based aid is available for families who qualify.</p>
+                    
+                    <h3 style="margin-top: 25px;">Eligibility Criteria</h3>
+                    <ul class="criteria-list">
+                        <li><i class="fas fa-check"></i> Minimum B+ average in previous school</li>
+                        <li><i class="fas fa-check"></i> Excellent performance on entrance exam</li>
+                        <li><i class="fas fa-check"></i> Demonstrated leadership qualities</li>
+                        <li><i class="fas fa-check"></i> Strong recommendation letters</li>
+                        <li><i class="fas fa-check"></i> Financial need documentation (for need-based aid)</li>
+                    </ul>
+                    
+                    <a href="#" class="btn">Download Scholarship Application</a>
+                </div>
+                <div class="scholarship-img">
+                    <img src="" alt="Scholarship" style="width: 100%; border-radius: 10px; box-shadow: var(--shadow);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application" id="application">
+        <div class="container">
+            <div class="section-title">
+                <h2>Application Form</h2>
+                <p>Begin your journey with Falahiyya Educational Complex</p>
+            </div>
+            
+            <div class="form-container">
+                <form id="admissionForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth *</label>
+                            <input type="date" id="dob" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender *</label>
+                            <select id="gender" class="form-control" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="currentSchool">Current School</label>
+                        <input type="text" id="currentSchool" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="grade">Grade Applying For *</label>
+                        <select id="grade" class="form-control" required>
+                            <option value="">Select Grade Level</option>
+                            <option value="kg">Kindergarten</option>
+                            <option value="p1">Primary 1</option>
+                            <option value="p2">Primary 2</option>
+                            <option value="p3">Primary 3</option>
+                            <option value="p4">Primary 4</option>
+                            <option value="p5">Primary 5</option>
+                            <option value="p6">Primary 6</option>
+                            <option value="jhs1">JHS 1</option>
+                            <option value="jhs2">JHS 2</option>
+                            <option value="jhs3">JHS 3</option>
+                            <!-- <option value="shs1">SHS 1</option>
+                            <option value="shs2">SHS 2</option>
+                            <option value="shs3">SHS 3</option> -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="boarding" name="boarding">
+                            I am applying for boarding facilities (Grade 3 and above only)
+                        </label>
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; color: var(--sea-blue);">Parent/Guardian Information</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="parentName">Full Name *</label>
+                            <input type="text" id="parentName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="relationship">Relationship to Applicant *</label>
+                            <input type="text" id="relationship" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="parentEmail">Email *</label>
+                            <input type="email" id="parentEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="parentPhone">Phone Number *</label>
+                            <input type="tel" id="parentPhone" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Full Address *</label>
+                        <textarea id="address" class="form-control" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additional">Additional Information</label>
+                        <textarea id="additional" class="form-control" placeholder="Any special needs, previous educational challenges, or other information we should know?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" required>
+                            I certify that the information provided is accurate and complete *
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-block">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Falahiyya</h3>
+                    <p>Established in 2021, Falahiyya Arabic and English Educational Complex provides quality bilingual education with boarding facilities for students from kindergarten to senior high school.</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="academic.html">Academics</li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                          <!-- <li><a href="">Boarding Facilities</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info-footer">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Krobo, Techiman Wenchi Road Opposite Hope Senior High School</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+233 20 890 5084/+233 54 577 0815</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info.falahiyya@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Monday-Friday: 7:30 AM - 3:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Falahiyya Arabic & English Educational Complex. All Rights Reserved.</p>
+                <p>developed ♥ by: <a href="https://rashidmusah.github.io/rashtechcons/">RASH-TECH CONSULT</a></p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileToggle.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile nav when clicking a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Form Submission
+        const admissionForm = document.getElementById('admissionForm');
+        
+        admissionForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const grade = document.getElementById('grade').options[document.getElementById('grade').selectedIndex].text;
+            
+            // Show success message
+            alert(`Thank you ${firstName}! Your application for ${grade} has been submitted successfully. Our admissions team will contact you shortly.`);
+            
+            // Reset form
+            admissionForm.reset();
+        });
+    </script>
+</body>
+</html>

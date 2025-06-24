@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Falahiyya Arabic & English Educational Complex</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <div class="container header-top-content">
+        <div class="contact-info">
+          <span><i class="fas fa-phone"></i> +233 20 890 5084 / +233 54 577 0815</span>
+          <span><i class="fas fa-envelope"></i> info.falahiyya@gmail.com</span>
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container main-header">
+      <div class="logo">
+        <div class="logo-img">
+          <img src="src/images/logo2.png" alt="Falahiyya Logo" />
+        </div>
+        <div class="logo-text">
+          <h1>Falahiyya Arabic & English Educational Complex</h1>
+          <p>Academic and Moral Excellence</p>
+        </div>
+      </div>
+      <div class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academic.html">Academics</a></li>
+          <li><a href="admission.html">Admissions</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>School Gallery</h1>
+      <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li>Gallery</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our School Life</h2>
+        <p>Experience the vibrant environment and activities at Falahiyya Educational Complex</p>
+      </div>
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="campus">Campus</button>
+        <button class="filter-btn" data-filter="classrooms">Classrooms</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="students">Students</button>
+        <button class="filter-btn" data-filter="boarding">Boarding</button>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- SAMPLE ITEM - Add proper image paths -->
+        <div class="gallery-item" data-category="campus">
+          <img src="src\images\Untitled-1.png" alt="School Campus" />
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Graduation</h3>
+            <div class="gallery-category">Campus</div>
+          </div>
+        </div>
+        <!-- Repeat similar blocks for other categories -->
+        <!-- ... other images -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>School Videos</h2>
+        <p>Watch our students in action and experience campus life</p>
+      </div>
+
+      <div class="video-grid">
+        <!-- Example Video Card -->
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <video id="culturalDayVideo" width="100%" poster="src/images/video-poster.jpg">
+              <source src="src\videos\WhatsApp Video 2025-06-24 at 00.27.12_0be93462.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div class="video-play-btn" id="customPlayBtn">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <div class="video-info">
+            <h3>Quran recitation</h3>
+            <p>Our students showcase diverse Quran recitation.</p>
+          </div>
+        </div>
+        <!-- Add more video cards below as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Modal -->
+  <div class="photo-modal">
+    <div class="modal-content">
+      <span class="modal-close"><i class="fas fa-times"></i></span>
+      <img src="" alt="Gallery Image" />
+      <div class="modal-caption">
+        <h3 class="modal-title"></h3>
+        <div class="modal-category"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty Event Notice -->
+  <!-- <div class="empty-event">
+    <h1>No Event</h1>
+    <p>There are no activities to show at the moment.</p>
+  </div> -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>About Falahiyya</h3>
+          <p>Established in 2021, Falahiyya Arabic and English Educational Complex provides quality bilingual education with boarding facilities for students from kindergarten to high school.</p>
+          <div class="social-links" style="margin-top: 20px;">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academic.html">Academics</a></li>
+            <li><a href="admission.html">Admissions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul class="contact-info-footer">
+            <li><i class="fas fa-map-marker-alt"></i><span>Krobo, Techiman Wenchi Road Opposite Hope Senior High School</span></li>
+            <li><i class="fas fa-phone"></i><span>+233 20 890 5084 / +233 54 577 0815</span></li>
+            <li><i class="fas fa-envelope"></i><span>info.falahiyya@gmail.com</span></li>
+            <li><i class="fas fa-clock"></i><span>Monday-Friday: 7:30 AM - 3:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Falahiyya Arabic & English Educational Complex. All Rights Reserved.</p>
+        <p>developed ♥ by: <a href="https://rashidmusah.github.io/rashtechcons/">RASH-TECH CONSULT</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile nav
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mainNav = document.getElementById('mainNav');
+    mobileToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      mobileToggle.innerHTML = mainNav.classList.contains('active')
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close nav on link click
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Gallery filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        galleryItems.forEach(item => {
+          item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Photo modal
+    const modal = document.querySelector('.photo-modal');
+    const modalImg = document.querySelector('.modal-content img');
+    const modalTitle = document.querySelector('.modal-title');
+    const modalCategory = document.querySelector('.modal-category');
+    const modalClose = document.querySelector('.modal-close');
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        modalImg.src = item.querySelector('img').src;
+        modalTitle.textContent = item.querySelector('.gallery-title').textContent;
+        modalCategory.textContent = item.querySelector('.gallery-category').textContent;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Custom video play
+    const video = document.getElementById('culturalDayVideo');
+    const playBtn = document.getElementById('customPlayBtn');
+    playBtn.addEventListener('click', function () {
+      video.setAttribute('controls', 'controls');
+      video.play();
+      playBtn.style.display = 'none';
+    });
+    video.addEventListener('ended', function () {
+      video.removeAttribute('controls');
+      playBtn.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
